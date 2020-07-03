@@ -4,8 +4,8 @@
 #include "stm32g0xx_hal.h"
 #include "stm32g0xx_ll_system.h"
 
-#define EN_485_PORT             GPIOB
-#define EN_485_PIN              GPIO_PIN_1
+#define EN_485_PORT             GPIOA
+#define EN_485_PIN              GPIO_PIN_9
 #define TX_ON                   HAL_GPIO_WritePin(EN_485_PORT, EN_485_PIN, GPIO_PIN_SET)
 #define TX_OFF                  HAL_GPIO_WritePin(EN_485_PORT, EN_485_PIN, GPIO_PIN_RESET)
 #define USART1_MAX_DATALEN      600    
