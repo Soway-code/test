@@ -29,7 +29,7 @@ directionsensor_rotation\main.o: ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_h
 directionsensor_rotation\main.o: ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_pwr.h
 directionsensor_rotation\main.o: ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_pwr_ex.h
 directionsensor_rotation\main.o: ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_ll_system.h
-directionsensor_rotation\main.o: ..\MDK-ARM\board.h
+directionsensor_rotation\main.o: ..\rt-thread-3.1.3\include\rthw.h
 directionsensor_rotation\main.o: ..\rt-thread-3.1.3\include\rtthread.h
 directionsensor_rotation\main.o: ..\MDK-ARM\rtconfig.h
 directionsensor_rotation\main.o: ..\rt-thread-3.1.3\include\rtdebug.h

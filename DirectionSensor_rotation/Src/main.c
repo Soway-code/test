@@ -20,6 +20,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -47,18 +48,7 @@
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
-static struct rt_thread task1_thread;			 	//定义线程控制块 
-static rt_uint8_t rt_task1_thread_stack[1024];		//定义线程栈
-
-static struct rt_thread task2_thread;				 //定义线程控制块 
-static rt_uint8_t rt_task2_thread_stack[1024];		//定义线程栈
-
-//函数声明
-static void task1_thread_entry(void* parameter);
-static void task2_thread_entry(void* parameter);
-
 void SystemClock_Config(void);
-
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -72,49 +62,43 @@ void SystemClock_Config(void);
   * @brief  The application entry point.
   * @retval int
   */
-  
-/**
- * 名称         : main()
- * 创建日期     : 
- * 作者         : 
- * 功能         : main函数
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
 int main(void)
 {
+  /* USER CODE BEGIN 1 */
 
-	HAL_Init();
+  /* USER CODE END 1 */
 
-	SystemClock_Config();
-	
-	MX_GPIO_Init();
- 
-	
-	rt_thread_init(&task1_thread, 						//线程控制块 
-					"task1", 							//线程名字 
-					task1_thread_entry, 				// 线程入口函数 
-					RT_NULL, 							// 线程入口函数参数 
-					&rt_task1_thread_stack[0],			// 线程栈起始地址 
-					sizeof(rt_task1_thread_stack), 		// 线程栈大小 
-					3, 									// 线程的优先级 
-					20); 								// 线程时间片 
-	rt_thread_startup(&task1_thread); 					// 启动线程，开启调度 
-	
-	
-	
-	rt_thread_init(&task2_thread, 						// 线程控制块 
-					"task2", 							// 线程名字 
-					task2_thread_entry, 				// 线程入口函数 
-					RT_NULL, 							// 线程入口函数参数 
-					&rt_task2_thread_stack[0],			// 线程栈起始地址 
-					sizeof(rt_task2_thread_stack), 		// 线程栈大小 
-					3, 									// 线程的优先级 
-					20); 								// 线程时间片 
-	rt_thread_startup(&task2_thread); 					// 启动线程，开启调度 
+  /* MCU Configuration--------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
+
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
+
+  /* Configure the system clock */
+  SystemClock_Config();
+
+  /* USER CODE BEGIN SysInit */
+
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  /* USER CODE BEGIN 2 */
+
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */
 }
 
 /**
@@ -191,48 +175,5 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
-
-
-/**
- * 名称         : task1_thread_entry(void* parameter)
- * 创建日期     : 
- * 作者         : 
- * 功能         : 线程1
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
-static void task1_thread_entry(void* parameter)
-{
-	while(1)
-	{
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
-		rt_thread_delay(500);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
-		rt_thread_delay(500);
-	}
-}
-
-
-/**
- * 名称         : task2_thread_entry(void* parameter)
- * 创建日期     : 
- * 作者         : 
- * 功能         : 线程2
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
-static void task2_thread_entry(void* parameter)
-{
-	while(1)
-	{
-		rt_thread_delay(500);
-	}
-}
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
