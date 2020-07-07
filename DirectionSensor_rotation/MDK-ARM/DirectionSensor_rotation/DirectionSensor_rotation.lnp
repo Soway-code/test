@@ -1,10 +1,10 @@
 --cpu Cortex-M0+
 "directionsensor_rotation\startup_stm32g070xx.o"
+"directionsensor_rotation\board.o"
 "directionsensor_rotation\main.o"
+"directionsensor_rotation\gpio.o"
 "directionsensor_rotation\stm32g0xx_it.o"
 "directionsensor_rotation\stm32g0xx_hal_msp.o"
-"directionsensor_rotation\board.o"
-"directionsensor_rotation\gpio.o"
 "directionsensor_rotation\stm32g0xx_hal_gpio.o"
 "directionsensor_rotation\stm32g0xx_hal_tim.o"
 "directionsensor_rotation\stm32g0xx_hal_tim_ex.o"
