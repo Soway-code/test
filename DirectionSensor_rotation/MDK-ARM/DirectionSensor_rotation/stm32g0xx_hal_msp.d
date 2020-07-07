@@ -29,14 +29,3 @@ directionsensor_rotation\stm32g0xx_hal_msp.o: ../Drivers/STM32G0xx_HAL_Driver/In
 directionsensor_rotation\stm32g0xx_hal_msp.o: ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_pwr.h
 directionsensor_rotation\stm32g0xx_hal_msp.o: ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_pwr_ex.h
 directionsensor_rotation\stm32g0xx_hal_msp.o: ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_ll_system.h
-directionsensor_rotation\stm32g0xx_hal_msp.o: ..\rt-thread-3.1.3\include\rthw.h
-directionsensor_rotation\stm32g0xx_hal_msp.o: ..\rt-thread-3.1.3\include\rtthread.h
-directionsensor_rotation\stm32g0xx_hal_msp.o: ..\MDK-ARM\rtconfig.h
-directionsensor_rotation\stm32g0xx_hal_msp.o: ..\rt-thread-3.1.3\include\rtdebug.h
-directionsensor_rotation\stm32g0xx_hal_msp.o: ..\rt-thread-3.1.3\include\rtdef.h
-directionsensor_rotation\stm32g0xx_hal_msp.o: C:\rj\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
-directionsensor_rotation\stm32g0xx_hal_msp.o: ..\rt-thread-3.1.3\include\rtservice.h
-directionsensor_rotation\stm32g0xx_hal_msp.o: ..\rt-thread-3.1.3\include\rtm.h
-directionsensor_rotation\stm32g0xx_hal_msp.o: ..\rt-thread-3.1.3\include\rtthread.h
-directionsensor_rotation\stm32g0xx_hal_msp.o: ../Inc/gpio.h
-directionsensor_rotation\stm32g0xx_hal_msp.o: ../Inc/main.h

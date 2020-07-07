@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=E:/test/test/DirectionSensor_rotation/Inc
+HeaderPath=C:/Users/macanlin/Desktop/DirectionSensor_rotation/Inc
 HeaderFiles=stm32g0xx_it.h;stm32g0xx_hal_conf.h;main.h;gpio.h;
-SourcePath=E:/test/test/DirectionSensor_rotation/Src
+SourcePath=C:/Users/macanlin/Desktop/DirectionSensor_rotation/Src
 SourceFiles=stm32g0xx_it.c;stm32g0xx_hal_msp.c;main.c;gpio.c;
 
 [PreviousLibFiles]
