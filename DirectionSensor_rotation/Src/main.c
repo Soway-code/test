@@ -58,7 +58,7 @@ void SystemClock_Config(void);
 	static struct rt_thread task2_thread;				 //定义线程控制块 
 	static rt_uint8_t rt_task2_thread_stack[1024];		//定义线程栈
 
-	//函数声明
+	//线程函数声明
 	static void task1_thread_entry(void* parameter);
 	static void task2_thread_entry(void* parameter);
 /* USER CODE END PFP */
