@@ -1,0 +1,11 @@
+rtt-nano\scheduler.o: ..\RT-Thread\src\scheduler.c
+rtt-nano\scheduler.o: ..\RT-Thread\include\rtthread.h
+rtt-nano\scheduler.o: ../Inc/rtconfig.h
+rtt-nano\scheduler.o: ..\RT-Thread\include\rtdebug.h
+rtt-nano\scheduler.o: ..\RT-Thread\include\rtdef.h
+rtt-nano\scheduler.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+rtt-nano\scheduler.o: ..\RT-Thread\include\rtservice.h
+rtt-nano\scheduler.o: ..\RT-Thread\include\rtm.h
+rtt-nano\scheduler.o: ..\RT-Thread\include\rtthread.h
+rtt-nano\scheduler.o: ..\RT-Thread\components\finsh\finsh_api.h
+rtt-nano\scheduler.o: ..\RT-Thread\include\rthw.h
