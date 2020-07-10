@@ -1,0 +1,11 @@
+rtt-nano\kservice.o: ..\RT-Thread\src\kservice.c
+rtt-nano\kservice.o: ..\RT-Thread\include\rtthread.h
+rtt-nano\kservice.o: ../Inc/rtconfig.h
+rtt-nano\kservice.o: ..\RT-Thread\include\rtdebug.h
+rtt-nano\kservice.o: ..\RT-Thread\include\rtdef.h
+rtt-nano\kservice.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+rtt-nano\kservice.o: ..\RT-Thread\include\rtservice.h
+rtt-nano\kservice.o: ..\RT-Thread\include\rtm.h
+rtt-nano\kservice.o: ..\RT-Thread\include\rtthread.h
+rtt-nano\kservice.o: ..\RT-Thread\components\finsh\finsh_api.h
+rtt-nano\kservice.o: ..\RT-Thread\include\rthw.h
