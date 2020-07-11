@@ -12,9 +12,9 @@
                  2：用公司的上位机软件测试work_One的项目
                     A:)测试bootloader烧写之后串口的收发
                     B:)bootloader运行之后是否可以通过串口下载程序
-                    C:)测试烧死APP之后是否能够执行，是否能够通过上位机升级APP
+                    C:)测试烧写APP之后是否能够执行，是否能够通过上位机升级APP
                           
-                 3：在自己的开发板上（STM32G0开发板），用modbus ASCII、RTU模式18B20的温度读取，屏显示到OLED屏上
+                 3：在自己的开发板上（STM32G0开发板），用modbus ASCII、RTU模式对18B20的温度读取，显示到OLED屏上同时串口输出
 
 
 ​              
