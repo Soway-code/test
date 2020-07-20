@@ -14,4 +14,5 @@
 
 2：完成以上代码之后把SPI四种模式打包成通用库代码，测试打包的库的调用是否正确
 
-![image-20200720105442944](C:\Users\Loo George\AppData\Roaming\Typora\typora-user-images\image-20200720105442944.png)
+![image-20200720105442944](README.assets/image-20200720105442944.png)
+
