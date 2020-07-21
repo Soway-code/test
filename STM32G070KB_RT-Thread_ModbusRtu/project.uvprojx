@@ -14,16 +14,16 @@
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>STM32G071RBTx</Device>
+          <Device>STM32G070KBTx</Device>
           <Vendor>STMicroelectronics</Vendor>
           <PackID>Keil.STM32G0xx_DFP.1.2.0</PackID>
           <PackURL>https://www.keil.com/pack/</PackURL>
-          <Cpu>IRAM(0x20000000,0x00008000) IROM(0x08000000,0x00020000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ELITTLE</Cpu>
+          <Cpu>IRAM(0x20000000,0x00009000) IROM(0x08000000,0x00020000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32G0xx_128 -FS08000000 -FL020000 -FP0($$Device:STM32G071RBTx$CMSIS\Flash\STM32G0xx_128.FLM))</FlashDriverDll>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32G0xx_128 -FS08000000 -FL020000 -FP0($$Device:STM32G070KBTx$CMSIS\Flash\STM32G0xx_128.FLM))</FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:STM32G071RBTx$Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h</RegisterFile>
+          <RegisterFile>$$Device:STM32G070KBTx$Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -33,7 +33,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:STM32G071RBTx$CMSIS\SVD\STM32G07x.svd</SFDFile>
+          <SFDFile>$$Device:STM32G070KBTx$CMSIS\SVD\STM32G070.svd</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -163,7 +163,7 @@
             <AdsACrf>1</AdsACrf>
             <AdsANop>0</AdsANop>
             <AdsANot>0</AdsANot>
-            <AdsLLst>0</AdsLLst>
+            <AdsLLst>1</AdsLLst>
             <AdsLmap>1</AdsLmap>
             <AdsLcgr>1</AdsLcgr>
             <AdsLsym>1</AdsLsym>
@@ -245,7 +245,7 @@
               <IRAM>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x8000</Size>
+                <Size>0x9000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
@@ -274,8 +274,8 @@
               </OCR_RVCT3>
               <OCR_RVCT4>
                 <Type>1</Type>
-                <StartAddress>0x8000000</StartAddress>
-                <Size>0x20000</Size>
+                <StartAddress>0x8004000</StartAddress>
+                <Size>0x1c000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -300,7 +300,7 @@
               <OCR_RVCT9>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x8000</Size>
+                <Size>0x9000</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER, STM32G071xx</Define>
               <Undefine></Undefine>
-              <IncludePath>.;rt-thread\include;applications;.;board;board\CubeMX_Config\Inc;libraries\HAL_Drivers;libraries\HAL_Drivers\config;rt-thread\libcpu\arm\common;rt-thread\libcpu\arm\cortex-m0;rt-thread\components\drivers\include;rt-thread\components\drivers\include;rt-thread\components\libc\compilers\common;libraries\STM32G0xx_HAL\STM32G0xx_HAL_Driver\Inc;libraries\STM32G0xx_HAL\CMSIS\Device\ST\STM32G0xx\Include;libraries\STM32G0xx_HAL\CMSIS\Include;.\APP\Inc;.\BSP\Inc</IncludePath>
+              <IncludePath>.;rt-thread\include;applications;.;board;board\CubeMX_Config\Inc;libraries\HAL_Drivers;libraries\HAL_Drivers\config;rt-thread\libcpu\arm\common;rt-thread\libcpu\arm\cortex-m0;rt-thread\components\drivers\include;rt-thread\components\drivers\include;rt-thread\components\libc\compilers\common;libraries\STM32G0xx_HAL\STM32G0xx_HAL_Driver\Inc;libraries\STM32G0xx_HAL\CMSIS\Device\ST\STM32G0xx\Include;libraries\STM32G0xx_HAL\CMSIS\Include;.\APP\Inc;.\BSP\Inc;.\ModBus\Inc;.\OLED\Inc;.\DS18B20\Inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -657,6 +657,16 @@
               <FileType>1</FileType>
               <FilePath>.\libraries\STM32G0xx_HAL\STM32G0xx_HAL_Driver\Src\stm32g0xx_hal_uart_ex.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32g0xx_hal_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\libraries\STM32G0xx_HAL\STM32G0xx_HAL_Driver\Src\stm32g0xx_hal_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32g0xx_hal_tim_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\libraries\STM32G0xx_HAL\STM32G0xx_HAL_Driver\Src\stm32g0xx_hal_tim_ex.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -668,29 +678,9 @@
               <FilePath>.\APP\Src\In_Flash_app.c</FilePath>
             </File>
             <File>
-              <FileName>ModBus_Conf.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\APP\Src\ModBus_Conf.c</FilePath>
-            </File>
-            <File>
-              <FileName>ModBusRtu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\APP\Src\ModBusRtu.c</FilePath>
-            </File>
-            <File>
               <FileName>usart_app.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\APP\Src\usart_app.c</FilePath>
-            </File>
-            <File>
-              <FileName>ds18b20.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\APP\Src\ds18b20.c</FilePath>
-            </File>
-            <File>
-              <FileName>oled.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\APP\Src\oled.c</FilePath>
             </File>
             <File>
               <FileName>task.c</FileName>
@@ -711,6 +701,41 @@
               <FileName>usart_bsp.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\BSP\Src\usart_bsp.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>ModBus</GroupName>
+          <Files>
+            <File>
+              <FileName>ModBus_Conf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\ModBus\Src\ModBus_Conf.c</FilePath>
+            </File>
+            <File>
+              <FileName>ModBusRtu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\ModBus\Src\ModBusRtu.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>OLED</GroupName>
+          <Files>
+            <File>
+              <FileName>oled.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\OLED\Src\oled.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>DS18B20</GroupName>
+          <Files>
+            <File>
+              <FileName>ds18b20.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\DS18B20\Src\ds18b20.c</FilePath>
             </File>
           </Files>
         </Group>
