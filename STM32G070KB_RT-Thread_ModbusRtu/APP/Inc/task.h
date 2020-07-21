@@ -12,7 +12,7 @@
 #include "In_Flash_app.h"
 #include "ModBusRtu.h"
 #include "stdio.h"
-
+#include "tim.h"
 uint8_t task_init(void);
 
 #endif 

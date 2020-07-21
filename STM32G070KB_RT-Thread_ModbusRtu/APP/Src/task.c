@@ -48,7 +48,7 @@ static void task2_OLED_entry(void* parameter);
  * 功能         : 初始化 创建信号量,线程
  * 输入参数     : 无
  * 输出参数     : 无
- * 返回结果     : 1 创建成功  0 创建失败
+ * 返回结果     : 创建成功 RT_EOK(0)    创建失败 RT_ERROR(1)
  * 注意和说明   : 无
  * 修改内容     : 无 
  */
@@ -74,7 +74,7 @@ uint8_t task_init(void)
    if (task1_18B20 != RT_NULL)
         rt_thread_startup(task1_18B20);		///启动线程，开启调度 
     else
-        return 0;
+        return RT_ERROR;
     
 	
     task2_OLED =                           ///线程控制块指针 
@@ -89,9 +89,9 @@ uint8_t task_init(void)
    if (task2_OLED != RT_NULL)
         rt_thread_startup(task2_OLED);		 ///启动线程，开启调度 
     else
-        return 0;
+        return RT_ERROR;
 		
-	return 1;
+	return RT_EOK;
 }
 
 
@@ -109,6 +109,8 @@ uint8_t task_init(void)
 static void task1_18B20_entry(void* parameter)
 {	
 	uint32_t i=0;
+	DS18B20_Init();					///ds18b20传感器初始化
+	//MX_TIM3_Init();
 	while(1)
 	{
 		rt_sem_take(test_sem,			/// 获取信号量 
@@ -145,7 +147,6 @@ static void task2_OLED_entry(void* parameter)
 
 	uint32_t i=0;
 	uint8_t buf[5];
-	DS18B20_Init();	
 	OLED_Init();				/// 初始化OLED 
 	OLED_Clear(); 				/// 清除屏幕
 	OLED_ShowCHinese(0,0,0);	///
@@ -153,7 +154,7 @@ static void task2_OLED_entry(void* parameter)
 	OLED_ShowCHinese(32,0,2);	///
 	OLED_ShowCHinese(48,0,3);	///
 	OLED_ShowCHinese(64,0,4);	///
-	OLED_ShowCHinese(112,0,5);	///
+
 	OLED_ShowString(0,4,"task1:",16);
 	OLED_ShowString(0,6,"task2:",16);
 	while(1)
@@ -165,7 +166,7 @@ static void task2_OLED_entry(void* parameter)
 		
 		OLED_ShowString(80,0,buf,16);
 		OLED_ShowNum(48,6,i++,5,16);
-		
+
 		rt_sem_release(	test_sem );		/// 释放二值信号量
 		
 		

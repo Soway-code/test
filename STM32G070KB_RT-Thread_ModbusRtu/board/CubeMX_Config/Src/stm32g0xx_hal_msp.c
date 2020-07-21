@@ -609,33 +609,33 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* hspi)
 * @param htim_base: TIM_Base handle pointer
 * @retval None
 */
-void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
-{
+//void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
+//{
 
-  if(htim_base->Instance==TIM2)
-  {
-  /* USER CODE BEGIN TIM2_MspInit 0 */
+//  if(htim_base->Instance==TIM2)
+//  {
+//  /* USER CODE BEGIN TIM2_MspInit 0 */
 
-  /* USER CODE END TIM2_MspInit 0 */
-    /* Peripheral clock enable */
-    __HAL_RCC_TIM2_CLK_ENABLE();
-  /* USER CODE BEGIN TIM2_MspInit 1 */
+//  /* USER CODE END TIM2_MspInit 0 */
+//    /* Peripheral clock enable */
+//    __HAL_RCC_TIM2_CLK_ENABLE();
+//  /* USER CODE BEGIN TIM2_MspInit 1 */
 
-  /* USER CODE END TIM2_MspInit 1 */
-  }
-  else if(htim_base->Instance==TIM3)
-  {
-  /* USER CODE BEGIN TIM3_MspInit 0 */
+//  /* USER CODE END TIM2_MspInit 1 */
+//  }
+//  else if(htim_base->Instance==TIM3)
+//  {
+//  /* USER CODE BEGIN TIM3_MspInit 0 */
 
-  /* USER CODE END TIM3_MspInit 0 */
-    /* Peripheral clock enable */
-    __HAL_RCC_TIM3_CLK_ENABLE();
-  /* USER CODE BEGIN TIM3_MspInit 1 */
+//  /* USER CODE END TIM3_MspInit 0 */
+//    /* Peripheral clock enable */
+//    __HAL_RCC_TIM3_CLK_ENABLE();
+//  /* USER CODE BEGIN TIM3_MspInit 1 */
 
-  /* USER CODE END TIM3_MspInit 1 */
-  }
+//  /* USER CODE END TIM3_MspInit 1 */
+//  }
 
-}
+//}
 
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef* htim)
 {
@@ -682,33 +682,33 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef* htim)
 * @retval None
 */
 
-void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* htim_base)
-{
+//void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* htim_base)
+//{
 
-  if(htim_base->Instance==TIM2)
-  {
-  /* USER CODE BEGIN TIM2_MspDeInit 0 */
+//  if(htim_base->Instance==TIM2)
+//  {
+//  /* USER CODE BEGIN TIM2_MspDeInit 0 */
 
-  /* USER CODE END TIM2_MspDeInit 0 */
-    /* Peripheral clock disable */
-    __HAL_RCC_TIM2_CLK_DISABLE();
-  /* USER CODE BEGIN TIM2_MspDeInit 1 */
+//  /* USER CODE END TIM2_MspDeInit 0 */
+//    /* Peripheral clock disable */
+//    __HAL_RCC_TIM2_CLK_DISABLE();
+//  /* USER CODE BEGIN TIM2_MspDeInit 1 */
 
-  /* USER CODE END TIM2_MspDeInit 1 */
-  }
-  else if(htim_base->Instance==TIM3)
-  {
-  /* USER CODE BEGIN TIM3_MspDeInit 0 */
+//  /* USER CODE END TIM2_MspDeInit 1 */
+//  }
+//  else if(htim_base->Instance==TIM3)
+//  {
+//  /* USER CODE BEGIN TIM3_MspDeInit 0 */
 
-  /* USER CODE END TIM3_MspDeInit 0 */
-    /* Peripheral clock disable */
-    __HAL_RCC_TIM3_CLK_DISABLE();
-  /* USER CODE BEGIN TIM3_MspDeInit 1 */
+//  /* USER CODE END TIM3_MspDeInit 0 */
+//    /* Peripheral clock disable */
+//    __HAL_RCC_TIM3_CLK_DISABLE();
+//  /* USER CODE BEGIN TIM3_MspDeInit 1 */
 
-  /* USER CODE END TIM3_MspDeInit 1 */
-  }
+//  /* USER CODE END TIM3_MspDeInit 1 */
+//  }
 
-}
+//}
 
 /* USER CODE BEGIN 1 */
 

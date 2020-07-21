@@ -32,7 +32,10 @@ int main(void)
     /// set LED0 pin mode to output 
     rt_pin_mode(LED0_PIN, PIN_MODE_OUTPUT);
 	
-	task_init();						///初始化创建线程
-
+	if(RT_ERROR == task_init())						///初始化创建线程
+	{
+		rt_kprintf("Thread creation failed!!!!!!\n");
+		while(1) ;
+	}
     return RT_EOK;
 }

@@ -1,5 +1,5 @@
 #include "ds18b20.h"
-#include "stm32g0xx_hal.h"
+
 
 /**
  * Ãû³Æ         : delay_us(uint32_t tim)	
