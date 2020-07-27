@@ -1,0 +1,1 @@
+stm32g070kb_rt-thread_app\startup_stm32g070xx.o: startup_stm32g070xx.s
