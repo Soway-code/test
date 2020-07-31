@@ -1,21 +1,22 @@
 
-                           事项 （7-3 至 7-17）
+                           事项 （7-1 至 7-9）
 
 
 ​                                              
 
                             work_One 任务
                 
-                要求：理解modubs，F3协议，用公司的上位机操作stm32G0开发板移植的正反转传感器
-                                 
-             1：用flash模拟eeprom做成一个标准模板
-             2：用公司的上位机软件测试work_One的项目
-                A:)测试bootloader烧写之后串口的收发
-                B:)bootloader运行之后是否可以通过串口下载程序
-                C:)测试烧写APP之后是否能够执行，是否能够通过上位机升级APP
+                      任务
+            
+            要求： 在rt-thread或rt-thread nano下用HAL库完成如下任务
+           
+             1：stm32G0的usart_bootloader代码
+             2：移植正反装传感器到rt-tread环境下，测试的板子就用韦剑祥的STM32G07X的小开发板
+               （
+                   正方转传感器涉及到第1项的bootloader；flash分出一部分做标定参数存取，相当于eeprom;还有就是F3协议
+                ）
                       
-             3：在自己的开发板上（STM32G0开发板），用modbus ASCII、RTU模式对18B20的温度读取，显示到OLED屏上同时串口输出
-                          
+             3：代码的注释一定要按照doxygen的格式
           
 
 
