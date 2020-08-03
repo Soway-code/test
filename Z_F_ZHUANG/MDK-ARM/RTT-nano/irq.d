@@ -1,0 +1,11 @@
+rtt-nano\irq.o: ..\RT-Thread\src\irq.c
+rtt-nano\irq.o: ..\RT-Thread\include\rthw.h
+rtt-nano\irq.o: ..\RT-Thread\include\rtthread.h
+rtt-nano\irq.o: ../Inc/rtconfig.h
+rtt-nano\irq.o: ..\RT-Thread\include\rtdebug.h
+rtt-nano\irq.o: ..\RT-Thread\include\rtdef.h
+rtt-nano\irq.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+rtt-nano\irq.o: ..\RT-Thread\include\rtservice.h
+rtt-nano\irq.o: ..\RT-Thread\include\rtm.h
+rtt-nano\irq.o: ..\RT-Thread\include\rtthread.h
+rtt-nano\irq.o: ..\RT-Thread\components\finsh\finsh_api.h

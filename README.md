@@ -17,7 +17,12 @@
                 ）
                       
              3：代码的注释一定要按照doxygen的格式
-          
+             
+             4: 为了节省空间及上转速度，提交代码的时候不用提交driver文档
+                 driver
+                 	--cmsis
+                 	--stm32xxx_HAL_Driver
+
 
 
 ​              
