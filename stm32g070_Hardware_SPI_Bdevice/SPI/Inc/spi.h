@@ -1,21 +1,18 @@
-/**
-  ******************************************************************************
-  * File Name          : SPI.h
-  * Description        : This file provides code for the configuration
-  *                      of the SPI instances.
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
-  *
-  ******************************************************************************
-  */
+/**@file        spi.h
+* @details      spi.c的头文件,声明了spi初始化函数
+* @author       马灿林
+* @date         2020-07-25
+* @version      V1.0.0
+* @copyright    2020-2030,深圳市信为科技发展有限公司
+**********************************************************************************
+* @par 修改日志:
+* <table>
+* <tr><th>Date        <th>Version  <th>Author    <th>Description
+* <tr><td>2020/07/25  <td>1.0.0    <td>马灿林    <td>创建初始版本
+* </table>
+*
+**********************************************************************************
+*/
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __spi_H
 #define __spi_H

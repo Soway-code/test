@@ -1,23 +1,21 @@
 /* USER CODE BEGIN Header */
-/**@file      	main.c
-* @brief     	Main program body
-* @default		frame of project main function enter
-* @author		loodao any question please send mail to 893204847@qq.com
-* @date 		2020-07-20
-* @version		V1.0
-* @copyright	
-************************************************************************
-* @attention
-* @brief hardware platefrom:stm32G070KB
-* @brief OS Version: not have
-* @brief para modify log:
-* <table>
-* <tr><th>Date	<th>Version 
-* <tr><td>2020/07/08 <td>1.0 <td>Loodao <td> buidling new version
-* </table>
-*
-***********************************************************************
-*/
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  * All rights reserved.</center></h2>
+  *
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
+  *
+  ******************************************************************************
+  */
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
