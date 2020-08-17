@@ -1,4 +1,4 @@
-#                        modbus RTU模式 DS18B20获取温度APP
+#                         DS18B20获取温度APP
 
 ####                                                             
 

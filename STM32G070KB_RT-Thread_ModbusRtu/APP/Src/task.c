@@ -1,21 +1,18 @@
-/**@file      	task.c
-* @brief     	Threaded programs
-* @default		Function thread function entry
-* @author		loodao any question please send mail to 893204847@qq.com
-* @date 		2020-07-17
-* @version		V1.0
-* @copyright	
-************************************************************************
-* @attention
-* @brief hardware platefrom:stm32G070KB
-* @brief OS Version: RT-Thread 4.0.2
-* @brief para modify log:
+/**@file        task.c
+* @brief        任务模块
+* @details      创建任务与执行任务
+* @author       马灿林
+* @date         2020-07-17
+* @version      V1.0.0
+* @copyright    2020-2030,深圳市信为科技发展有限公司
+**********************************************************************************
+* @par 修改日志:
 * <table>
-* <tr><th>Date	<th>Version 
-* <tr><td>2020/07/08 <td>1.0 <td>Loodao <td> buidling new version
+* <tr><th>Date        <th>Version  <th>Author    <th>Description
+* <tr><td>2020/07/17  <td>1.0.0    <td>马灿林    <td>创建初始版本
 * </table>
 *
-***********************************************************************
+**********************************************************************************
 */
 
 #include "task.h"
@@ -32,26 +29,20 @@ uint32_t temperature;							//存放18B20温度
 ModBusBaseParam_TypeDef     ModBusBaseParam;    //ModBus处理的基本参数结构
 ModBus_Device_Param         ModBus_Device;  	//ModBus管理设备的参数结构体
 
-
-/**************************************************************************
-*                             函数声明
-*************************************************************************
+/**
+* @brief 任务函数声明
 */
 static void task1_18B20_entry(void* parameter);
 static void task2_OLED_entry(void* parameter);
 
 
-/**
- * 名称         : uint8_t task_init(void)	
- * 创建日期     : 2020-07-17
- * 作者         : 
- * 功能         : 初始化 创建信号量,线程
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 创建成功 RT_EOK(0)    创建失败 RT_ERROR(1)
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+/**@brief       任务的初始化函数
+* @param[in]    无
+* @param[out]   无
+* @return       任务函数初始化结果
+* - RT_EOK(0) (成功)
+* - RT_ERROR(1)(失败)
+*/
 uint8_t task_init(void) 
 {
 	
@@ -95,17 +86,9 @@ uint8_t task_init(void)
 }
 
 
-/**
- * 名称         : task1_18B20_entry(void* parameter)
- * 创建日期     : 
- * 作者         : 
- * 功能         : 线程1
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+/**@brief       线程1
+* @return       无
+*/
 static void task1_18B20_entry(void* parameter)
 {	
 	uint32_t i=0;
@@ -131,17 +114,9 @@ static void task1_18B20_entry(void* parameter)
 }
 
 
-/**
- * 名称         : task2_OLED_entry(void* parameter)
- * 创建日期     : 
- * 作者         : 
- * 功能         : 线程2
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+/**@brief       线程2
+* @return       无
+*/
 static void task2_OLED_entry(void* parameter)
 {	
 
@@ -185,7 +160,9 @@ static void task2_OLED_entry(void* parameter)
 	}
 }
 
-
+/**@brief       ModBus协议初始化
+* @return       RT_EOK：初始化成功
+*/
 int Device_Param_Init(void)
 {
 	Check_Device_Param();

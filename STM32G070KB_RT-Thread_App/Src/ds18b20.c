@@ -1,18 +1,28 @@
+/**@file        ds18b20.c
+* @brief        ds18b20模块的应用
+* @details      ds18b20温度数据获取与处理
+* @author       马灿林
+* @date         2020-07-17
+* @version      V1.0.0
+* @copyright    2020-2030,深圳市信为科技发展有限公司
+**********************************************************************************
+* @par 修改日志:
+* <table>
+* <tr><th>Date        <th>Version  <th>Author    <th>Description
+* <tr><td>2020/07/17  <td>1.0.0    <td>马灿林    <td>创建初始版本
+* </table>
+*
+**********************************************************************************
+*/
+
 #include "ds18b20.h"
 #include "stm32g0xx_hal.h"
 
 
-/**
- * 名称         : delay_us(uint32_t tim)	
- * 创建日期     : 
- * 作者         : 
- * 功能         : 微秒延时
- * 输入参数     : tim=微秒
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+/**@brief       微秒延时函数
+* @param[in]    tim : 延时的微秒时间
+* @return       无
+*/
 void delay_us(uint32_t tim)
 {
 	tim = tim*10;
@@ -20,51 +30,31 @@ void delay_us(uint32_t tim)
 }
 
 
-/**
- * 名称         : delay_750us(void)
- * 创建日期     : 
- * 作者         : 
- * 功能         : 750微秒延时
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+/**@brief       750微秒延时
+* @param[in]    无
+* @return       无
+*/
 void delay_750us(void)
 {
 	uint32_t tim=16000;
 	while(tim--);	
 }
 
-/**
- * 名称         : delay_15us(void)
- * 创建日期     : 
- * 作者         : 
- * 功能         : 15微秒延时
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+/**@brief       15微秒延时
+* @param[in]    无
+* @return       无
+*/
 void delay_15us(void)
 {
 	uint32_t tim=310;
 	while(tim--);	
 }
 
-/**
- * 名称         : delay_12us(void)
- * 创建日期     : 
- * 作者         : 
- * 功能         : 12微秒延时
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+
+/**@brief       12微秒延时
+* @param[in]    无
+* @return       无
+*/
 void delay_12us(void)
 {
 	uint32_t tim=248;
@@ -72,34 +62,20 @@ void delay_12us(void)
 }
 
 
-/**
- * 名称         : delay_50us(void)
- * 创建日期     : 
- * 作者         : 
- * 功能         : 50微秒延时
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+/**@brief       50微秒延时
+* @param[in]    无
+* @return       无
+*/
 void delay_50us(void)
 {
 	uint32_t tim=1048;
 	while(tim--);	
 }
 
-/**
- * 名称         : delay_60us(void)
- * 创建日期     : 
- * 作者         : 
- * 功能         : 60微秒延时
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+/**@brief       60微秒延时
+* @param[in]    无
+* @return       无
+*/
 void delay_60us(void)
 {
 	uint32_t tim=1260;
@@ -108,16 +84,8 @@ void delay_60us(void)
 
 
 /**
- * 名称         : DS18B20_IO_OUT()	
- * 创建日期     : 
- * 作者         : 
- * 功能         : 设置ds18b20管脚为输出模式
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : IO方向设置
- * 修改内容     : 无 
- */
+* @brief 配置管脚为推挽输出模式
+*/
 void DS18B20_IO_OUT()
 {
 	GPIO_InitTypeDef GPIO_Initure;
@@ -130,17 +98,10 @@ void DS18B20_IO_OUT()
     HAL_GPIO_Init(DS18B20_GPIOX,&GPIO_Initure);     	///初始化
 }
 
+
 /**
- * 名称         : S18B20_IO_IN()	
- * 创建日期     : 
- * 作者         : 
- * 功能         : 设置ds18b20管脚为输入模式
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : IO方向设置
- * 修改内容     : 无 
- */
+* @brief 配置管脚为浮空输入模式
+*/
 void DS18B20_IO_IN()
 {
 
@@ -154,18 +115,11 @@ void DS18B20_IO_IN()
     HAL_GPIO_Init(DS18B20_GPIOX,&GPIO_Initure);     	///初始化
 }
 
-
-/**
- * 名称         : DS18B20_DQ_OUT(uint8_t out)	
- * 创建日期     : 
- * 作者         : 
- * 功能         : 设置ds18b20管脚的输出状态
- * 输入参数     : 1	输出高电平		其他 输出低电平
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+/**@brief       设置ds18b20管脚的输出状态
+* @param[in]    out : 输出状态
+* - None
+* @note         out: 1	(输出高电平)	其他 (输出低电平)
+*/
 void DS18B20_DQ_OUT(uint8_t out)
 {
 	if(1 == out)
@@ -174,19 +128,9 @@ void DS18B20_DQ_OUT(uint8_t out)
 		HAL_GPIO_WritePin(DS18B20_GPIOX, DS18B20_GPIO_PINX,GPIO_PIN_RESET);
 }
 
-
-
 /**
- * 名称         : DS18B20_Rst(void)	
- * 创建日期     : 
- * 作者         : 
- * 功能         : 复位DS18B20
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+* @brief 复位DS18B20
+*/
 void DS18B20_Rst(void)	   
 {                 
 	DS18B20_IO_OUT();   	//设置为输出
@@ -196,19 +140,10 @@ void DS18B20_Rst(void)
 	delay_15us();
 }
 
-
-
-/**
- * 名称         : DS18B20_Check(void)   
- * 创建日期     : 
- * 作者         : 
- * 功能         : 等待DS18B20的回应
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 1:未检测到DS18B20的存在  0:存在
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+/**@brief       等待DS18B20的回应
+* @return       函数执行结果
+* - 返回结果    : 1 (未检测到DS18B20的存在)  0 (存在)
+*/
 uint8_t DS18B20_Check(void) 	   
 {   
 	uint8_t retry=0;
@@ -230,18 +165,9 @@ uint8_t DS18B20_Check(void)
 }
 
 
-
-/**
- * 名称         : DS18B20_Read_Bit(void)     
- * 创建日期     : 
- * 作者         : 
- * 功能         : 从DS18B20读取一个位
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 1/0
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+/**@brief       从DS18B20读取一个位
+* @return       函数执行结果,读取到的Bit 1 / 0 
+*/
 uint8_t DS18B20_Read_Bit(void) 
 {
 	uint8_t data;
@@ -257,19 +183,9 @@ uint8_t DS18B20_Read_Bit(void)
 	return data;
 }
 
-
-
-/**
- * 名称         : DS18B20_Read_Byte(void)     
- * 创建日期     : 
- * 作者         : 
- * 功能         : 从DS18B20读取一个字节
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 读到的数据
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+/**@brief       从DS18B20读取一个字节
+* @return       读到的数据Byte 
+*/
 uint8_t DS18B20_Read_Byte(void)   
 {        
 	uint8_t i,j,dat;
@@ -283,18 +199,9 @@ uint8_t DS18B20_Read_Byte(void)
 }
 
 
-/**
- * 名称         : DS18B20_Write_Byte(uint8_t dat)     
- * 创建日期     : 
- * 作者         : 
- * 功能         : 写一个字节到DS18B20
- * 输入参数     : dat：要写入的字节
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
-
+/**@brief       写一个字节到DS18B20
+* @param[in]    dat : 要写入的字节
+*/
 void DS18B20_Write_Byte(uint8_t dat)     
  {             
     uint8_t j;
@@ -322,17 +229,10 @@ void DS18B20_Write_Byte(uint8_t dat)
 }
  
 
+ 
 /**
- * 名称         : DS18B20_Start(void)
- * 创建日期     : 
- * 作者         : 
- * 功能         : 开始温度转换
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+* @brief 开始温度转换
+*/
 void DS18B20_Start(void)
 {   						               
     DS18B20_Rst();	   
@@ -342,17 +242,10 @@ void DS18B20_Start(void)
 }
 
 
-/**
- * 名称         : DS18B20_Init(void)
- * 创建日期     : 
- * 作者         : 
- * 功能         : 初始化DS18B20的IO口 DQ 同时检测DS的存在
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 1:不存在 0:存在
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+
+/**@brief       初始化DS18B20的IO口DQ  同时检测DS的存在
+* @return       DS18B20是否存在	1 (不存在) 0 (存在);
+*/
 uint8_t DS18B20_Init(void)
 {
 	GPIO_InitTypeDef GPIO_Initure;
@@ -369,17 +262,10 @@ uint8_t DS18B20_Init(void)
 }
 
 
-/**
- * 名称         : DS18B20_Get_Temp(void)
- * 创建日期     : 
- * 作者         : 
- * 功能         : 获取温度值
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 温度值 （-550~1250）
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+/**@brief       获取温度值
+* @return       函数执行结果
+* - 温度值 (-550~1250)	返回值是温度的十倍 (24.5℃时返回245)	
+*/
 short DS18B20_Get_Temp(void)
 {
     uint8_t temp;

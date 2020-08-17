@@ -2279,42 +2279,42 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       116         26          0          0       4096       2665   board.o
-        52         10          0          4          0       1121   clock.o
-       176         28         16          0          0       5454   components.o
+       116         26          0          0       4096       2685   board.o
+        52         10          0          4          0       1133   clock.o
+       176         28         16          0          0       5498   components.o
        216         32          0          0          0        780   context_rvds.o
-       296        168          0         12          0       2974   cpuport.o
-       658         24          0          0          0       8465   ds18b20.o
-       100          8          0          0          0        835   gpio.o
-       198         24          0          0        376       5330   idle.o
-       324          0          0          0          0       7213   ipc.o
-        48          8          0          1          0       1518   irq.o
-      1372        162        290          0        128      10715   kservice.o
-       184         32          0          0          0     367040   main.o
-       684        180          0         24         32       3716   mem.o
-       296          4          0         64          0       7996   object.o
-      1030         48       2072        384          0       8519   oled.o
-       404         58          0         20         64       7638   scheduler.o
+       296        168          0         12          0       2982   cpuport.o
+       658         24          0          0          0       8517   ds18b20.o
+       100          8          0          0          0        843   gpio.o
+       198         24          0          0        376       5358   idle.o
+       324          0          0          0          0       7233   ipc.o
+        48          8          0          1          0       1534   irq.o
+      1372        162        290          0        128      10755   kservice.o
+       184         32          0          0          0     367080   main.o
+       684        180          0         24         32       3740   mem.o
+       296          4          0         64          0       8036   object.o
+      1030         48       2072        384          0       8575   oled.o
+       404         58          0         20         64       7674   scheduler.o
         28          8        184          0       1024        612   startup_stm32g070xx.o
-       124         18          0         12          0       2647   stm32g0xx_hal.o
-       176         34          0          0          0      12564   stm32g0xx_hal_cortex.o
-       128          6          0          0          0       1139   stm32g0xx_hal_dma.o
-       330         16          0          0          0       2771   stm32g0xx_hal_gpio.o
-        44          6          0          0          0        766   stm32g0xx_hal_msp.o
-        76         14          0          0          0        722   stm32g0xx_hal_pwr_ex.o
-      1516         88          0          0          0      19989   stm32g0xx_hal_rcc.o
-       352         14          0          0          0       1600   stm32g0xx_hal_rcc_ex.o
-      2758         98          0          0          0      14266   stm32g0xx_hal_uart.o
-       322         16          0          0          0       5074   stm32g0xx_hal_uart_ex.o
-        20          6          0          0          0       1208   stm32g0xx_it.o
-       160         26         96          4          0       1799   system_stm32g0xx.o
-       556        144          0         36        200       2553   task.o
-       712         40          0          0          0      11348   thread.o
-       486         22          0         12          0       9760   timer.o
-       248         28          0          0        140       3266   usart.o
+       124         18          0         12          0       2659   stm32g0xx_hal.o
+       176         34          0          0          0      12588   stm32g0xx_hal_cortex.o
+       128          6          0          0          0       1143   stm32g0xx_hal_dma.o
+       330         16          0          0          0       2779   stm32g0xx_hal_gpio.o
+        44          6          0          0          0        774   stm32g0xx_hal_msp.o
+        76         14          0          0          0        726   stm32g0xx_hal_pwr_ex.o
+      1516         88          0          0          0      20013   stm32g0xx_hal_rcc.o
+       352         14          0          0          0       1608   stm32g0xx_hal_rcc_ex.o
+      2758         98          0          0          0      14314   stm32g0xx_hal_uart.o
+       322         16          0          0          0       5094   stm32g0xx_hal_uart_ex.o
+        20          6          0          0          0       1212   stm32g0xx_it.o
+       160         26         96          4          0       1807   system_stm32g0xx.o
+       556        144          0         36        200       2573   task.o
+       712         40          0          0          0      11396   thread.o
+       486         22          0         12          0       9808   timer.o
+       248         28          0          0        140       3274   usart.o
 
     ----------------------------------------------------------------------
-     14228       1396       2692        576       6060     534063   Object Totals
+     14228       1396       2692        576       6060     534803   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         38          0          2          3          0          0   (incl. Padding)
 
@@ -2367,8 +2367,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     15680       1450       2692        580       6060     527387   Grand Totals
-     15680       1450       2692        208       6060     527387   ELF Image Totals (compressed)
+     15680       1450       2692        580       6060     528127   Grand Totals
+     15680       1450       2692        208       6060     528127   ELF Image Totals (compressed)
      15680       1450       2692        208          0          0   ROM Totals
 
 ==============================================================================
