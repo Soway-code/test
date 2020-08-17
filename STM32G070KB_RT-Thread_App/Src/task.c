@@ -1,28 +1,25 @@
-/**@file      	task.c
-* @brief     	Threaded programs
-* @default		Function thread function entry
-* @author		loodao any question please send mail to 893204847@qq.com
-* @date 		2020-07-17
-* @version		V1.0
-* @copyright	
-************************************************************************
-* @attention
-* @brief hardware platefrom:stm32G070KB
-* @brief OS Version: RT-Thread 3.1.3
-* @brief para modify log:
+/**@file        task.c
+* @brief        任务模块
+* @details      创建任务与执行任务
+* @author       马灿林
+* @date         2020-07-17
+* @version      V1.0.0
+* @copyright    2020-2030,深圳市信为科技发展有限公司
+**********************************************************************************
+* @par 修改日志:
 * <table>
-* <tr><th>Date	<th>Version 
-* <tr><td>2020/07/08 <td>1.0 <td>Loodao <td> buidling new version
+* <tr><th>Date        <th>Version  <th>Author    <th>Description
+* <tr><td>2020/07/17  <td>1.0.0    <td>马灿林    <td>创建初始版本
 * </table>
 *
-***********************************************************************
+**********************************************************************************
 */
-
 #include "task.h"
 #include<string.h>
 
 uint8_t UART1_RXBuff[200];
 uint8_t buf[16]={":FF4100010000BF"};
+
 /// 定义线程控制块指针 
 static rt_thread_t task1_18B20 = RT_NULL;
 static rt_thread_t task2_OLED = RT_NULL;
@@ -38,17 +35,13 @@ uint32_t temperature;
 static rt_sem_t test_sem = RT_NULL;
 
 
-/**
- * 名称         : uint8_t task_init(void)	
- * 创建日期     : 2020-07-17
- * 作者         : 
- * 功能         : 初始化 创建信号量,线程
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 1 创建成功  0 创建失败
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+/**@brief       任务的初始化函数
+* @param[in]    无
+* @param[out]   无
+* @return       任务函数初始化结果
+* - 1(成功)
+* - 0(失败)
+*/
 uint8_t task_init(void)
 {
 	///创建一个信号量
@@ -102,18 +95,9 @@ uint8_t task_init(void)
 
 }
 
-
-/**
- * 名称         : task1_18B20_entry(void* parameter)
- * 创建日期     : 
- * 作者         : 
- * 功能         : 线程1
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+/**@brief       线程1
+* @return       无
+*/
 static void task1_18B20_entry(void* parameter)
 {
 	
@@ -135,17 +119,9 @@ static void task1_18B20_entry(void* parameter)
 	}
 }
 
-/**
- * 名称         : task2_OLED_entry(void* parameter)
- * 创建日期     : 
- * 作者         : 
- * 功能         : 线程2
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+/**@brief       线程2
+* @return       无
+*/
 static void task2_OLED_entry(void* parameter)
 {
 
@@ -184,17 +160,9 @@ static void task2_OLED_entry(void* parameter)
 }
 
 
-/**
- * 名称         : task3_usart_entry(void* parameter)
- * 创建日期     : 
- * 作者         : 
- * 功能         : 线程3
- * 输入参数     : 无
- * 输出参数     : 无
- * 返回结果     : 无
- * 注意和说明   : 无
- * 修改内容     : 无 
- */
+/**@brief       线程3
+* @return       无
+*/
 uint32_t i=0;
 static void task3_usart_entry(void* parameter)
 {
@@ -212,7 +180,6 @@ static void task3_usart_entry(void* parameter)
 			
 			if(0 == strncmp((char*)UART1_RXBuff,(char*)buf,15))		//升级指令一致
 				HAL_NVIC_SystemReset();								///软复位
-
 		}
 	
 	
