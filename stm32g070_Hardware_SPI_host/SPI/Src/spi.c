@@ -1,21 +1,19 @@
-/**
-  ******************************************************************************
-  * File Name          : SPI.c
-  * Description        : This file provides code for the configuration
-  *                      of the SPI instances.
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
-  *
-  ******************************************************************************
-  */
+/**@file        spi.c
+* @brief        spi 通信协议
+* @details      sip 初始化
+* @author       马灿林
+* @date         2020-07-25
+* @version      V1.0.0
+* @copyright    2020-2030,深圳市信为科技发展有限公司
+**********************************************************************************
+* @par 修改日志:
+* <table>
+* <tr><th>Date        <th>Version  <th>Author    <th>Description
+* <tr><td>2020/07/25  <td>1.0.0    <td>马灿林    <td>创建初始版本
+* </table>
+*
+**********************************************************************************
+*/
 
 /* Includes ------------------------------------------------------------------*/
 #include "spi.h"
@@ -26,7 +24,11 @@
 
 SPI_HandleTypeDef hspi1;
 
-/* SPI1 init function */
+/**@brief       硬件SPI1初始化函数
+* @param[in]    无
+* @param[out]   无
+* @return       无
+*/
 void MX_SPI1_Init(void)
 {
 
