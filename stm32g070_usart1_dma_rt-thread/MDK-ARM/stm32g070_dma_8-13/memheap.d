@@ -1,0 +1,11 @@
+stm32g070_dma_8-13\memheap.o: ..\rt-thread-3.1.3\src\memheap.c
+stm32g070_dma_8-13\memheap.o: ..\rt-thread-3.1.3\include\rthw.h
+stm32g070_dma_8-13\memheap.o: ..\rt-thread-3.1.3\include\rtthread.h
+stm32g070_dma_8-13\memheap.o: ../Inc/rtconfig.h
+stm32g070_dma_8-13\memheap.o: .\RTE\_stm32g070_dma_8-13\RTE_Components.h
+stm32g070_dma_8-13\memheap.o: ..\rt-thread-3.1.3\include\rtdebug.h
+stm32g070_dma_8-13\memheap.o: ..\rt-thread-3.1.3\include\rtdef.h
+stm32g070_dma_8-13\memheap.o: C:\rj\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+stm32g070_dma_8-13\memheap.o: ..\rt-thread-3.1.3\include\rtservice.h
+stm32g070_dma_8-13\memheap.o: ..\rt-thread-3.1.3\include\rtm.h
+stm32g070_dma_8-13\memheap.o: ..\rt-thread-3.1.3\include\rtthread.h

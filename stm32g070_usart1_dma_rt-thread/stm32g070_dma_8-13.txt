@@ -1,0 +1,66 @@
+Configuration	stm32g070_dma_8-13
+STM32CubeMX 	5.6.1
+Date	08/14/2020
+MCU	STM32G070KBTx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+SYS	Serial Wire	SYS_SWCLK	PA14-BOOT0
+SYS	Serial Wire	SYS_SWDIO	PA13
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+SYS	Dead Battery Signals disabled	SYS_VS_DBSignals	VP_SYS_VS_DBSignals
+USART1	Asynchronous	USART1_RX	PA10
+USART1	Asynchronous	USART1_TX	PA9
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+19	PA9	USART1_TX	
+21	PA10	USART1_RX	
+24	PA13	SYS_SWDIO	
+25	PA14-BOOT0	SYS_SWCLK	
+28	PB4	GPIO_Output	
+PERIPHERALS	MODES	FUNCTIONS	PINS
+SYS	Serial Wire	SYS_SWCLK	PA14-BOOT0
+SYS	Serial Wire	SYS_SWDIO	PA13
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+SYS	Dead Battery Signals disabled	SYS_VS_DBSignals	VP_SYS_VS_DBSignals
+USART1	Asynchronous	USART1_RX	PA10
+USART1	Asynchronous	USART1_TX	PA9
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+19	PA9	USART1_TX	
+21	PA10	USART1_RX	
+24	PA13	SYS_SWDIO	
+25	PA14-BOOT0	SYS_SWCLK	
+28	PB4	GPIO_Output	
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : stm32g070_dma_8-13
+Project Folder : C:\Users\macanlin\Desktop\stm32g070_usart1_dma_rt-thread
+Toolchain / IDE : Makefile
+Firmware Package Name and Version : STM32Cube FW_G0 V1.3.0
+
+
+Code Generation Settings : 
+STM32Cube MCU packages and embedded software packs : Copy all used libraries into the project folder
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : Yes
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : 
+
+
+
+
+
