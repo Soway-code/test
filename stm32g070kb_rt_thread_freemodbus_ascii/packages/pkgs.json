@@ -1,0 +1,12 @@
+[
+ {
+  "path": "/packages/iot/freemodbus", 
+  "ver": "latest", 
+  "name": "FREEMODBUS"
+ }, 
+ {
+  "path": "/packages/peripherals/u8g2", 
+  "ver": "cpp-latest", 
+  "name": "U8G2"
+ }
+]
